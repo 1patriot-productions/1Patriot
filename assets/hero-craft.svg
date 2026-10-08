@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Craft illustration">
+  <rect width="480" height="360" rx="24" fill="#f7f0e6"/>
+  <rect x="40" y="50" width="160" height="140" rx="12" fill="#fff" stroke="#c45c26" stroke-width="3"/>
+  <path d="M70 90 h100 M70 110 h80 M70 130 h90" stroke="#1a365d" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+  <circle cx="175" cy="165" r="18" fill="#c9a227" opacity="0.8"/>
+  <rect x="220" y="70" width="100" height="100" rx="50" fill="#1a365d"/>
+  <path d="M245 120 L270 95 L295 120" fill="none" stroke="#e8d5a3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="270" cy="130" r="8" fill="#c45c26"/>
+  <rect x="340" y="55" width="100" height="130" rx="10" fill="#fff" stroke="#8b3a1a" stroke-width="3"/>
+  <ellipse cx="390" cy="100" rx="28" ry="22" fill="#c45c26" opacity="0.7"/>
+  <path d="M370 130 Q390 150 410 130" fill="none" stroke="#1a365d" stroke-width="3"/>
+  <rect x="60" y="220" width="140" height="90" rx="10" fill="#1a365d"/>
+  <text x="130" y="275" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#e8d5a3">AI</text>
+  <rect x="220" y="230" width="90" height="70" rx="8" fill="#c45c26"/>
+  <path d="M240 255 h50 M240 275 h35" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="380" cy="265" r="40" fill="#fff" stroke="#c9a227" stroke-width="4"/>
+  <path d="M365 265 Q380 245 395 265 Q380 285 365 265" fill="#c45c26"/>
+</svg>
