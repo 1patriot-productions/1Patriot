@@ -1,7 +1,8 @@
 (function () {
   "use strict";
 
-  const CONTACT_EMAIL = "YOUR-EMAIL@example.com";
+  const CONTACT_EMAIL = "RCDbyjen@gmail.com,Jenhayrit4@gmail.com";
+  const CONTACT_EMAIL_DISPLAY = "RCDbyjen@gmail.com or Jenhayrit4@gmail.com";
   const PARTY_PER_PERSON = 10;
 
   // Year in footer
@@ -253,7 +254,7 @@
       const body = buildBody(data);
       const mailto =
         "mailto:" +
-        encodeURIComponent(CONTACT_EMAIL) +
+        CONTACT_EMAIL +
         "?subject=" +
         encodeURIComponent(subject) +
         "&body=" +
@@ -273,9 +274,9 @@
         if (successNote) {
           successNote.textContent = mailtoOpened
             ? "If your email app opened, just hit send. Otherwise, copy the message below and email it to " +
-              CONTACT_EMAIL +
+              CONTACT_EMAIL_DISPLAY +
               "."
-            : "Copy the message below and email it to " + CONTACT_EMAIL + ".";
+            : "Copy the message below and email it to " + CONTACT_EMAIL_DISPLAY + ".";
         }
         if (messageCopy) {
           messageCopy.textContent =
