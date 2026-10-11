@@ -1,8 +1,8 @@
 (function () {
   "use strict";
 
-  const CONTACT_EMAIL = "RCDbyjen@gmail.com,Jenhayrit4@gmail.com";
-  const CONTACT_EMAIL_DISPLAY = "RCDbyjen@gmail.com or Jenhayrit4@gmail.com";
+  const CONTACT_EMAIL = "RCDbyJen@gmail.com,Jenhayrit4@gmail.com";
+  const CONTACT_EMAIL_DISPLAY = "RCDbyJen@gmail.com or Jenhayrit4@gmail.com";
   const PARTY_PER_PERSON = 10;
 
   // Year in footer
@@ -398,4 +398,14 @@
     var q = search.value.toLowerCase();
     app.querySelectorAll("#rw-cats button").forEach(function (b) { b.hidden = q && b.textContent.toLowerCase().indexOf(q) === -1; });
   });
+})();
+
+/* ===== Payment placeholder =====
+   Paste your Square / Squarespace checkout link between the quotes to show the Pay Now button. */
+var PAYMENT_URL = '';
+(function () {
+  var wrap = document.getElementById("pay-now-wrap");
+  var btn = document.getElementById("pay-now-btn");
+  if (!wrap || !btn) return;
+  if (PAYMENT_URL) { btn.href = PAYMENT_URL; wrap.hidden = false; } else { wrap.hidden = true; }
 })();

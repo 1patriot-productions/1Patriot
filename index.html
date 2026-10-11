@@ -538,11 +538,24 @@
             entirely your own. Starting prices are listed under <a href="#pricing">Pricing</a>; we’ll confirm your final quote.
           </p>
           <ul class="contact-notes">
-            <li><strong>Email:</strong> <a href="mailto:RCDbyjen@gmail.com">RCDbyjen@gmail.com</a> or <a href="mailto:Jenhayrit4@gmail.com">Jenhayrit4@gmail.com</a></li>
+            <li><strong>Email:</strong> <a href="mailto:RCDbyJen@gmail.com">RCDbyJen@gmail.com</a> or <a href="mailto:Jenhayrit4@gmail.com">Jenhayrit4@gmail.com</a></li>
             <li><strong>Phone:</strong> <a href="tel:+15137080623">(513) 708-0623</a></li>
             <li>AI designs are <strong>free with purchase</strong> — choose that option when you order.</li>
           </ul>
           <a class="btn btn-secondary" href="#pricing">Review pricing</a>
+          <!-- PAYMENT PLACEHOLDER: set PAYMENT_URL in script.js to a Square/Squarespace checkout link to show this button -->
+          <div class="rw-pay" id="pay-now-wrap" hidden>
+            <a class="btn btn-primary" id="pay-now-btn" href="#" target="_blank" rel="noopener">Pay Now</a>
+            <p class="muted">Secure checkout. Pay after Jen confirms your quote.</p>
+          </div>
+          <div class="rw-qr">
+            <img src="assets/rcd-qr.png" width="180" height="180" alt="QR code linking to the Ritzie Custom Designs website" />
+            <div>
+              <h3>Scan to Shop on Your Phone</h3>
+              <p>Point your phone camera at the code to open this site and start your order.</p>
+              <a href="assets/rcd-qr-print.png" download="RCD-QR-code.png">Download printable QR code</a>
+            </div>
+          </div>
         </div>
 
         <form class="quote-form" id="quote-form" novalidate>
@@ -614,7 +627,7 @@
         <p>Owned by Jen Ritzie · Custom apparel, crafts, parties &amp; more</p>
       </div>
       <div>
-        <p>Email: <a href="mailto:RCDbyjen@gmail.com">RCDbyjen@gmail.com</a> or <a href="mailto:Jenhayrit4@gmail.com">Jenhayrit4@gmail.com</a></p>
+        <p>Email: <a href="mailto:RCDbyJen@gmail.com">RCDbyJen@gmail.com</a> or <a href="mailto:Jenhayrit4@gmail.com">Jenhayrit4@gmail.com</a></p>
         <p>Phone: <a href="tel:+15137080623">(513) 708-0623</a></p>
       </div>
       <div class="footer-links">
@@ -622,6 +635,10 @@
         <a href="#pricing">Pricing</a>
         <a href="#ai-design">AI Design</a>
         <a href="#contact">Request a Quote</a>
+      </div>
+      <div class="footer-qr">
+        <img src="assets/rcd-qr.png" width="96" height="96" alt="QR code for the Ritzie Custom Designs website" />
+        <a href="assets/rcd-qr.png" download="RCD-QR-code.png">Scan or download QR</a>
       </div>
     </div>
     <p class="footer-copy">&copy; <span id="year"></span> Ritzie Custom Designs. All rights reserved.</p>
