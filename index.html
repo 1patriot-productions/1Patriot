@@ -24,6 +24,7 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="nav-menu">
+        <li><a href="#order" class="nav-highlight">Start Order</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#pricing">Pricing</a></li>
@@ -37,29 +38,138 @@
   </header>
 
   <main id="main">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Handmade · Custom · Heartfelt</p>
-          <h1 id="hero-title">Your story, designed by hand — with clear, fair pricing</h1>
-          <p class="hero-lead">
-            From uncensored &amp; patriotic tees (from $15) to funeral crosses, epoxy heirloom keepsakes,
-            party packages (from $10/person), and personalized songs — Jen Ritzie brings your vision to life.
-            AI designs are <strong>free with purchase</strong>.
-          </p>
+    <!-- HERO: combines banner 1 + banner 2 -->
+    <section class="rw-hero" aria-labelledby="hero-title">
+      <div class="container rw-hero-grid">
+        <div class="rw-hero-copy">
+          <p class="rw-eyebrow">★ Ritzie Custom Designs · by Jen Ritzie ★</p>
+          <h1 id="hero-title">Custom Made, Uncensored &amp; Themed Clothing for Your Special Occasion or Celebration</h1>
+          <p class="rw-lead">Tees from $15 (2 for $25), uniforms from $18, parties from $10/person, wreaths, crosses, epoxy keepsakes, coloring books and personalized songs. AI designs are <strong>free with purchase</strong>.</p>
           <div class="hero-ctas">
-            <a class="btn btn-primary" href="#contact">Request a Quote</a>
-            <a class="btn btn-secondary" href="#pricing">See Pricing</a>
+            <a class="btn btn-primary" href="#order">Start Your Order</a>
+            <a class="btn rw-btn-white" href="#contact">Request a Quote</a>
           </div>
-          <ul class="hero-badges" aria-label="Highlights">
-            <li>Tees from $15 · 2 for $25</li>
-            <li>Parties from $10/person</li>
-            <li>AI free with purchase</li>
-          </ul>
+          <p class="rw-motto">Your Ideas ★ Our Designs ★ Uncensored Creativity<br />Your Vision ★ Our Creativity ★ All American</p>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <img src="assets/hero-craft.svg" alt="" width="480" height="360" />
+        <div class="rw-hero-art">
+          <img class="rw-banner rw-b1" src="assets/banner-eagle-1.jpg" width="900" height="900" alt="Ritzie Custom Designs banner: eagle in flag sunglasses with an Uncensored skull tee, Custom Made heart tee, rhinestone cross purse, doll, Faith Family Freedom wreath, RCD hat and coloring book" />
+          <img class="rw-banner rw-b2" src="assets/banner-eagle-2.jpg" width="900" height="900" alt="Ritzie Custom Designs banner: winged eagle with patriotic custom shirts and a God Bless America wreath" />
+        </div>
+      </div>
+      <ul class="container rw-icons" aria-label="What we create">
+        <li><span aria-hidden="true">👕</span>Clothing</li>
+        <li><span aria-hidden="true">👜</span>Purses</li>
+        <li><span aria-hidden="true">🧸</span>Doll Clothes</li>
+        <li><span aria-hidden="true">🎨</span>Arts &amp; Crafts</li>
+        <li><span aria-hidden="true">🤖</span>A.I. Created Designs</li>
+        <li><span aria-hidden="true">🎉</span>Themed Decorations</li>
+        <li><span aria-hidden="true">🖍️</span>Personalized Coloring Books</li>
+        <li><span aria-hidden="true">🎵</span>Song Compilations</li>
+      </ul>
+    </section>
+
+    <!-- ORDER FLOW (modeled on app mockups) -->
+    <section class="section rw-order-sec" id="order" aria-labelledby="order-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">Start your order</p>
+          <h2 id="order-title">You imagine. We create. AI brings it to life.</h2>
+          <p class="section-intro">Pick a category, choose your options, and we'll fill in your quote request for you.</p>
+        </div>
+        <div class="rw-order-wrap">
+          <div class="rw-phone" id="rw-app" data-theme="light">
+            <div class="rw-topbar">
+              <button type="button" class="rw-back" id="rw-back" aria-label="Back" hidden>‹</button>
+              <strong>RCD</strong>
+              <button type="button" class="rw-theme" id="rw-theme" aria-pressed="false">🌙 Dark</button>
+            </div>
+            <div class="rw-screen" data-screen="splash">
+              <div class="rw-splash">
+                <div class="rw-logo">RCD</div>
+                <p class="rw-splash-name">Ritzie Custom Designs</p>
+                <p>You imagine. We create.<br /><strong>AI brings it to life.</strong></p>
+                <button type="button" class="btn btn-primary" data-go="home">Let's Create</button>
+              </div>
+            </div>
+            <div class="rw-screen" data-screen="home" hidden>
+              <h3>What will we create today?</h3>
+              <label class="sr-only" for="rw-search">Search categories</label>
+              <input id="rw-search" class="rw-search" type="search" placeholder="Search shirts, parties, wreaths…" />
+              <div class="rw-cats" id="rw-cats">
+                <button type="button" data-go="shirts" data-cat="Custom Shirts"><span aria-hidden="true">👕</span>Custom Shirts</button>
+                <button type="button" data-pick="Themed Parties / Events (from $10/person)" data-cat="Party Packages"><span aria-hidden="true">🎈</span>Party Packages</button>
+                <button type="button" data-pick="AI Design (Free with purchase)" data-cat="AI Services"><span aria-hidden="true">🤖</span>AI Services</button>
+                <button type="button" data-pick="Wreaths (from $35)" data-cat="Wreaths &amp; Crosses"><span aria-hidden="true">✝️</span>Wreaths &amp; Crosses</button>
+                <button type="button" data-pick="Themed Decorations (from $15 · package from $45)" data-cat="Party &amp; Event Decor"><span aria-hidden="true">🎉</span>Party &amp; Event Decor</button>
+                <button type="button" data-pick="Epoxy Resin Keepsakes (from $65)" data-cat="Epoxy Resin Creations"><span aria-hidden="true">💎</span>Epoxy Resin Creations</button>
+                <button type="button" data-go="sound" data-cat="Soundtracks"><span aria-hidden="true">🎵</span>Soundtracks</button>
+                <button type="button" data-pick="Other" data-cat="Photo &amp; Video Services"><span aria-hidden="true">📷</span>Photo &amp; Video Services</button>
+                <button type="button" data-pick="Other" data-cat="More Custom Creations"><span aria-hidden="true">✨</span>More Custom Creations</button>
+              </div>
+              <h4>Popular right now</h4>
+              <div class="rw-popular">
+                <button type="button" data-go="shirts" data-cat="Patriotic Designs">🇺🇸 Patriotic Designs</button>
+                <button type="button" data-pick="Themed Parties / Events (from $10/person)" data-cat="Birthday Packages">🎂 Birthday Packages</button>
+                <button type="button" data-pick="Wreaths (from $35)" data-cat="Memorial Wreaths">🕊️ Memorial Wreaths</button>
+              </div>
+            </div>
+            <div class="rw-screen" data-screen="shirts" hidden>
+              <h3>Custom Shirts <small>from $15 · 2 for $25</small></h3>
+              <div class="rw-shirt-view">
+                <svg viewBox="0 0 200 200" class="rw-shirt" aria-hidden="true"><path id="rw-shirt-path" d="M60 30 L85 20 Q100 35 115 20 L140 30 L175 60 L155 85 L140 75 L140 180 L60 180 L60 75 L45 85 L25 60 Z"/><text x="100" y="115" text-anchor="middle" id="rw-shirt-label">RCD ★</text></svg>
+              </div>
+              <div class="rw-tabs" role="group" aria-label="Garment">
+                <button type="button" class="on" data-garment="T-Shirt Front">Front</button>
+                <button type="button" data-garment="T-Shirt Back">Back</button>
+                <button type="button" data-garment="Sleeve">Sleeve</button>
+                <button type="button" data-garment="Hoodie">Hoodie</button>
+                <button type="button" data-garment="Tank">Tank</button>
+              </div>
+              <p class="rw-sub">Color</p>
+              <div class="rw-swatches" role="group" aria-label="Shirt color">
+                <button type="button" class="on" data-color="White" style="--c:#ffffff" aria-label="White"></button>
+                <button type="button" data-color="Navy" style="--c:#0a3161" aria-label="Navy"></button>
+                <button type="button" data-color="Red" style="--c:#b22234" aria-label="Red"></button>
+                <button type="button" data-color="Black" style="--c:#111111" aria-label="Black"></button>
+                <button type="button" data-color="Gray" style="--c:#9aa3ad" aria-label="Gray"></button>
+                <button type="button" data-color="Royal Blue" style="--c:#3c5a99" aria-label="Royal Blue"></button>
+              </div>
+              <p class="rw-ai">✨ <strong>Design your own</strong> — use our AI design tool. AI designs are free with purchase.</p>
+              <p class="rw-sub">Perfect for</p>
+              <div class="rw-chips" role="group" aria-label="Occasion">
+                <button type="button">Birthdays</button><button type="button">Family Reunions</button><button type="button">Vacations</button><button type="button">Group Events</button><button type="button">In Memory</button>
+              </div>
+              <button type="button" class="btn btn-primary rw-full" id="rw-shirt-go">Start Designing</button>
+            </div>
+            <div class="rw-screen" data-screen="sound" hidden>
+              <h3>AI Soundtracks</h3>
+              <div class="rw-sound-hero">🎵 Personalized AI soundtrack</div>
+              <ul class="rw-checks">
+                <li>100% personalized lyrics</li><li>Any genre</li><li>Any occasion</li><li>High quality audio</li>
+              </ul>
+              <p class="rw-sub">Package</p>
+              <div class="rw-chips rw-single" role="group" aria-label="Song package">
+                <button type="button" class="on" data-pick-opt="Personalized Audio — 1 song (from $12)">1 song · $12</button>
+                <button type="button" data-pick-opt="Personalized Audio — 5 songs (from $45)">5 songs · $45</button>
+                <button type="button" data-pick-opt="Personalized Audio — 10 songs (from $80)">10 songs · $80</button>
+                <button type="button" data-pick-opt="Personalized Audio — 20 songs (from $140)">20 songs · $140</button>
+              </div>
+              <button type="button" class="btn btn-primary rw-full" id="rw-sound-go">Get Your Soundtrack</button>
+            </div>
+            <nav class="rw-bottom" aria-label="Order app">
+              <button type="button" data-go="home">🏠<span>Home</span></button>
+              <button type="button" data-go="shirts">👕<span>Shirts</span></button>
+              <button type="button" data-go="sound">🎵<span>Songs</span></button>
+              <a href="#contact">🛒<span>Quote</span></a>
+              <a href="tel:+15137080623">📞<span>Call</span></a>
+            </nav>
+          </div>
+          <figure class="rw-preview">
+            <picture>
+              <img src="assets/order-preview-light.jpg" id="rw-preview-img" width="1200" height="656" loading="lazy" alt="Preview of the RCD ordering app: welcome screen, category grid, custom shirt designer and AI soundtrack screens" />
+            </picture>
+            <figcaption>How ordering works: choose a category, customize, and send your quote request. Final pricing follows our posted rates.</figcaption>
+          </figure>
         </div>
       </div>
     </section>

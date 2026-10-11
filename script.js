@@ -317,3 +317,85 @@
     });
   }
 })();
+
+/* ===== RCD order app ===== */
+(function () {
+  var app = document.getElementById("rw-app");
+  if (!app) return;
+  var screens = app.querySelectorAll(".rw-screen");
+  var back = document.getElementById("rw-back");
+  var history = [];
+  var current = "splash";
+  var state = { category: "", garment: "T-Shirt Front", color: "White", occasion: "", song: "Personalized Audio — 1 song (from $12)" };
+  function show(name, noPush) {
+    if (!noPush && name !== current) history.push(current);
+    current = name;
+    screens.forEach(function (s) { s.hidden = s.getAttribute("data-screen") !== name; });
+    back.hidden = name === "splash";
+  }
+  back.addEventListener("click", function () { show(history.pop() || "splash", true); });
+  var theme = document.getElementById("rw-theme");
+  var preview = document.getElementById("rw-preview-img");
+  theme.addEventListener("click", function () {
+    var dark = app.getAttribute("data-theme") !== "dark";
+    app.setAttribute("data-theme", dark ? "dark" : "light");
+    theme.setAttribute("aria-pressed", String(dark));
+    theme.textContent = dark ? "☀️ Light" : "🌙 Dark";
+    if (preview) preview.src = dark ? "assets/order-preview-dark.jpg" : "assets/order-preview-light.jpg";
+  });
+  function fill(service, details) {
+    var select = document.getElementById("service");
+    var msg = document.getElementById("message");
+    if (select) {
+      var opt = Array.prototype.find.call(select.options, function (o) { return o.value === service; });
+      select.value = opt ? service : "Other";
+    }
+    if (msg) msg.value = "Order request: " + details + "\n\nMy idea / quantities / sizes / date needed: ";
+    var contact = document.getElementById("contact");
+    if (contact) contact.scrollIntoView({ behavior: "smooth" });
+    var nameEl = document.getElementById("name");
+    if (nameEl) setTimeout(function () { nameEl.focus({ preventScroll: true }); }, 600);
+  }
+  app.addEventListener("click", function (e) {
+    var go = e.target.closest("[data-go]");
+    var pick = e.target.closest("[data-pick]");
+    var cat = e.target.closest("[data-cat]");
+    if (cat) state.category = cat.getAttribute("data-cat");
+    if (go) { show(go.getAttribute("data-go")); return; }
+    if (pick) { fill(pick.getAttribute("data-pick"), state.category); }
+  });
+  function single(groupSel, cb) {
+    app.querySelectorAll(groupSel).forEach(function (btn, _, all) {
+      btn.addEventListener("click", function () {
+        all.forEach(function (b) { b.classList.remove("on"); });
+        btn.classList.add("on");
+        cb(btn);
+      });
+    });
+  }
+  var shirtPath = document.getElementById("rw-shirt-path");
+  var shirtLabel = document.getElementById("rw-shirt-label");
+  single(".rw-tabs button", function (b) {
+    state.garment = b.getAttribute("data-garment");
+    shirtLabel.textContent = state.garment === "T-Shirt Back" ? "★ BACK ★" : state.garment === "Sleeve" ? "★" : "RCD ★";
+  });
+  single(".rw-swatches button", function (b) {
+    state.color = b.getAttribute("data-color");
+    shirtPath.style.setProperty("--shirt", b.style.getPropertyValue("--c"));
+  });
+  single('.rw-chips:not(.rw-single) button', function (b) { state.occasion = b.textContent; });
+  single(".rw-single button", function (b) { state.song = b.getAttribute("data-pick-opt"); });
+  document.getElementById("rw-shirt-go").addEventListener("click", function () {
+    fill("Custom Design T-Shirts (from $15 · 2 for $25)",
+      (state.category || "Custom Shirts") + " — " + state.garment + ", color: " + state.color +
+      (state.occasion ? ", for: " + state.occasion : "") + " (AI design free with purchase)");
+  });
+  document.getElementById("rw-sound-go").addEventListener("click", function () {
+    fill(state.song, "AI Soundtrack — " + state.song.replace("Personalized Audio — ", ""));
+  });
+  var search = document.getElementById("rw-search");
+  search.addEventListener("input", function () {
+    var q = search.value.toLowerCase();
+    app.querySelectorAll("#rw-cats button").forEach(function (b) { b.hidden = q && b.textContent.toLowerCase().indexOf(q) === -1; });
+  });
+})();
