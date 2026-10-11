@@ -326,7 +326,7 @@
   var back = document.getElementById("rw-back");
   var history = [];
   var current = "splash";
-  var state = { category: "", garment: "T-Shirt Front", color: "White", occasion: "", song: "Personalized Audio — 1 song (from $12)" };
+  var state = { category: "", garment: "T-Shirt Front", color: "White", occasion: "", song: "Personalized Audio — 1 song (from $15)" };
   function show(name, noPush) {
     if (!noPush && name !== current) history.push(current);
     current = name;
