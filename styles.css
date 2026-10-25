@@ -896,7 +896,8 @@ h2 { color: var(--blue); }
 .rw-hero { position:relative; color:#fff; padding:2.5rem 0 1.5rem; overflow:hidden;
   background:
     radial-gradient(circle at 12% 18%, rgba(255,255,255,.18) 0 2px, transparent 3px) 0 0/38px 38px,
-    linear-gradient(160deg, var(--navy-deep) 0%, var(--blue) 55%, #3a0d17 100%); }
+    linear-gradient(160deg, rgba(10,22,60,.86) 0%, rgba(20,40,110,.78) 55%, rgba(58,13,23,.86) 100%),
+    url("assets/hero-collage-bg.jpg") center/cover no-repeat, var(--navy-deep); }
 .rw-hero::after { content:""; position:absolute; left:0; right:0; bottom:0; height:10px;
   background: repeating-linear-gradient(90deg, var(--red) 0 40px, #fff 40px 80px); }
 .rw-hero-grid { display:grid; gap:2rem; align-items:center; }
@@ -983,3 +984,9 @@ h2 { color: var(--blue); }
 .footer-qr img { width:96px; height:96px; background:#fff; padding:4px; border-radius:8px; }
 .footer-qr a { color:#fff; font-size:.85rem; }
 .site-footer a { color:#f1c84b; } .footer-qr a { color:#fff; }
+
+.rw-video { position:relative; aspect-ratio:16/9; width:100%; max-width:900px; margin:1rem auto; border-radius:14px; overflow:hidden; border:4px solid #fff; box-shadow:0 0 0 4px var(--red),0 12px 30px rgba(0,0,0,.35); }
+.rw-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.rw-video-grid { display:grid; gap:1rem; grid-template-columns:1fr; }
+@media (min-width:760px){ .rw-video-grid{ grid-template-columns:repeat(3,1fr);} }
+.rw-hero-video { padding:1.5rem 1rem; max-width:720px; }
