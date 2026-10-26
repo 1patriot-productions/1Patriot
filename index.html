@@ -29,6 +29,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#ai-design" class="nav-highlight">AI Design</a></li>
+        <li><a href="#fundraisers">Fundraisers</a></li>
         <li><a href="#parties">Parties</a></li>
         <li><a href="#how">How It Works</a></li>
         <li><a href="#gallery">Gallery</a></li>
@@ -42,6 +43,7 @@
     <section class="rw-hero" aria-labelledby="hero-title">
       <div class="container rw-hero-grid">
         <div class="rw-hero-copy">
+          <p class="rw-vet-badge"><span aria-hidden="true">🇺🇸✈</span> U.S. Air Force Veteran Owned &amp; Operated</p>
           <p class="rw-eyebrow">★ Ritzie Custom Designs · by Jen Ritzie ★</p>
           <h1 id="hero-title">Custom Made, Uncensored &amp; Themed Clothing for Your Special Occasion or Celebration</h1>
           <p class="rw-lead">Tees from $15 (2 for $25), uniforms from $18, parties from $10/person, wreaths, crosses, epoxy keepsakes, coloring books and personalized songs. AI designs are <strong>free with purchase</strong>.</p>
@@ -56,15 +58,15 @@
           <img class="rw-banner rw-b2" src="assets/banner-rcd-collage-2.jpg" width="900" height="900" alt="Ritzie Custom Designs banner: winged eagle with patriotic custom shirts and a God Bless America wreath" />
         </div>
       </div>
-      <ul class="container rw-icons" aria-label="What we create">
-        <li><span aria-hidden="true">👕</span>Clothing</li>
-        <li><span aria-hidden="true">👜</span>Purses</li>
-        <li><span aria-hidden="true">🧸</span>Doll Clothes</li>
-        <li><span aria-hidden="true">🎨</span>Arts &amp; Crafts</li>
-        <li><span aria-hidden="true">🤖</span>A.I. Created Designs</li>
-        <li><span aria-hidden="true">🎉</span>Themed Decorations</li>
-        <li><span aria-hidden="true">🖍️</span>Personalized Coloring Books</li>
-        <li><span aria-hidden="true">🎵</span>Song Compilations</li>
+      <ul class="container rw-icons" aria-label="Start an order by category">
+        <li><button type="button" data-app-go="shirts" data-cat="Custom Clothing"><span aria-hidden="true">👕</span>Clothing</button></li>
+        <li><button type="button" data-app-pick="From-Scratch Clothes (from $45)" data-cat="Purses"><span aria-hidden="true">👜</span>Purses</button></li>
+        <li><button type="button" data-app-pick="From-Scratch Clothes (from $45)" data-cat="Doll Clothes"><span aria-hidden="true">🧸</span>Doll Clothes</button></li>
+        <li><button type="button" data-app-pick="Wreaths (from $35)" data-cat="Arts &amp; Crafts"><span aria-hidden="true">🎨</span>Arts &amp; Crafts</button></li>
+        <li><button type="button" data-app-go="shirts" data-cat="A.I. Created Designs" data-focus="rw-ai-tools"><span aria-hidden="true">🤖</span>A.I. Created Designs</button></li>
+        <li><button type="button" data-app-pick="Themed Decorations (from $15 · package from $45)" data-cat="Themed Decorations"><span aria-hidden="true">🎉</span>Themed Decorations</button></li>
+        <li><button type="button" data-app-pick="Custom Coloring Books (from $22)" data-cat="Personalized Coloring Books"><span aria-hidden="true">🖍️</span>Personalized Coloring Books</button></li>
+        <li><button type="button" data-app-go="sound" data-cat="Song Compilations"><span aria-hidden="true">🎵</span>Song Compilations</button></li>
       </ul>
     </section>
     <section class="rw-hero-video container" aria-label="Finished projects video">
@@ -106,6 +108,9 @@
                 <button type="button" data-pick="Themed Decorations (from $15 · package from $45)" data-cat="Party &amp; Event Decor"><span aria-hidden="true">🎉</span>Party &amp; Event Decor</button>
                 <button type="button" data-pick="Epoxy Resin Keepsakes (from $65)" data-cat="Epoxy Resin Creations"><span aria-hidden="true">💎</span>Epoxy Resin Creations</button>
                 <button type="button" data-go="sound" data-cat="Soundtracks"><span aria-hidden="true">🎵</span>Soundtracks</button>
+                <button type="button" data-pick="From-Scratch Clothes (from $45)" data-cat="Purses &amp; Doll Clothes"><span aria-hidden="true">👜</span>Purses &amp; Doll Clothes</button>
+                <button type="button" data-pick="Custom Coloring Books (from $22)" data-cat="Coloring Books"><span aria-hidden="true">🖍️</span>Coloring Books</button>
+                <button type="button" data-pick="Fundraiser Assistance (any worthy cause)" data-cat="Fundraisers"><span aria-hidden="true">💵</span>Fundraisers</button>
                 <button type="button" data-pick="Other" data-cat="Photo &amp; Video Services"><span aria-hidden="true">📷</span>Photo &amp; Video Services</button>
                 <button type="button" data-pick="Other" data-cat="More Custom Creations"><span aria-hidden="true">✨</span>More Custom Creations</button>
               </div>
@@ -119,12 +124,17 @@
             <div class="rw-screen" data-screen="shirts" hidden>
               <h3>Custom Shirts <small>from $15 · 2 for $25</small></h3>
               <div class="rw-shirt-view">
-                <svg viewBox="0 0 200 200" class="rw-shirt" aria-hidden="true"><path id="rw-shirt-path" d="M60 30 L85 20 Q100 35 115 20 L140 30 L175 60 L155 85 L140 75 L140 180 L60 180 L60 75 L45 85 L25 60 Z"/><text x="100" y="115" text-anchor="middle" id="rw-shirt-label">RCD ★</text></svg>
+                <svg viewBox="0 0 200 200" class="rw-shirt" role="img" aria-label="Shirt preview">
+                  <path id="rw-shirt-path" d="M60 30 L85 20 Q100 35 115 20 L140 30 L175 60 L155 85 L140 75 L140 180 L60 180 L60 75 L45 85 L25 60 Z"/>
+                  <path id="rw-shirt-extra" d="" />
+                  <image id="rw-shirt-img" x="70" y="62" width="60" height="70" preserveAspectRatio="xMidYMid meet" href="" style="display:none"/>
+                  <text x="100" y="115" text-anchor="middle" id="rw-shirt-label">RCD ★</text></svg>
               </div>
+              <p class="rw-garment-name" id="rw-garment-name" aria-live="polite">T-Shirt · Front</p>
               <div class="rw-tabs" role="group" aria-label="Garment">
                 <button type="button" class="on" data-garment="T-Shirt Front">Front</button>
                 <button type="button" data-garment="T-Shirt Back">Back</button>
-                <button type="button" data-garment="Sleeve">Sleeve</button>
+                <button type="button" data-garment="Long Sleeve">Long Sleeve</button>
                 <button type="button" data-garment="Hoodie">Hoodie</button>
                 <button type="button" data-garment="Tank">Tank</button>
               </div>
@@ -137,7 +147,26 @@
                 <button type="button" data-color="Gray" style="--c:#9aa3ad" aria-label="Gray"></button>
                 <button type="button" data-color="Royal Blue" style="--c:#3c5a99" aria-label="Royal Blue"></button>
               </div>
-              <p class="rw-ai">✨ <strong>Design your own</strong> — use our AI design tool. AI designs are free with purchase.</p>
+              <div class="rw-upload">
+                <label for="rw-upload-input" class="btn btn-secondary rw-full">📷 Upload your design</label>
+                <input type="file" id="rw-upload-input" accept="image/*" capture="environment" class="sr-only" />
+                <p class="rw-upload-name" id="rw-upload-name">Upload a photo, logo or AI design from your phone — it previews on the shirt.</p>
+                <button type="button" class="rw-upload-clear" id="rw-upload-clear" hidden>Remove design</button>
+              </div>
+              <div class="rw-ai" id="rw-ai-tools">
+                <p>✨ <strong>Create a design with a free AI tool</strong>, save it, then upload it above. (AI design help from Jen is also free with purchase.)</p>
+                <ul class="ai-links">
+                  <li><a href="https://www.meta.ai/" target="_blank" rel="noopener">Meta AI</a></li>
+                  <li><a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT Images</a></li>
+                  <li><a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini (Nano Banana)</a></li>
+                  <li><a href="https://copilot.microsoft.com/" target="_blank" rel="noopener">Microsoft Copilot</a></li>
+                  <li><a href="https://grok.com/" target="_blank" rel="noopener">Grok Imagine</a></li>
+                  <li><a href="https://firefly.adobe.com/" target="_blank" rel="noopener">Adobe Firefly</a></li>
+                  <li><a href="https://designer.microsoft.com/" target="_blank" rel="noopener">Microsoft Designer</a></li>
+                  <li><a href="https://www.canva.com/" target="_blank" rel="noopener">Canva</a></li>
+                </ul>
+                <small>Free tiers have daily limits; Meta AI and Gemini are among the most generous. These open on their own sites — create there, then upload here.</small>
+              </div>
               <p class="rw-sub">Perfect for</p>
               <div class="rw-chips" role="group" aria-label="Occasion">
                 <button type="button">Birthdays</button><button type="button">Family Reunions</button><button type="button">Vacations</button><button type="button">Group Events</button><button type="button">In Memory</button>
@@ -181,6 +210,7 @@
       <div class="container narrow">
         <p class="section-label">About</p>
         <h2 id="about-title">Meet Jen Ritzie &amp; Ritzie Custom Designs</h2>
+        <p class="vet-strip"><span aria-hidden="true">★</span> Air Force Veteran Owned and Operated <span aria-hidden="true">★</span></p>
         <p>
           Ritzie Custom Designs is a warm, craft-forward studio where every shirt, wreath,
           shadow box, and keepsake starts with your idea. Whether you need uniforms for a
@@ -394,9 +424,45 @@
           coloring books, and more. Tell us what you’re imagining and we’ll help turn sparks into
           something you love.
         </p>
+        <p><strong>Make your own with free AI tools</strong>, then upload it in the shirt designer above:</p>
+        <ul class="ai-links ai-links-lg">
+          <li><a href="https://www.meta.ai/" target="_blank" rel="noopener">Meta AI</a></li>
+          <li><a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT Images</a></li>
+          <li><a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini · Nano Banana</a></li>
+          <li><a href="https://copilot.microsoft.com/" target="_blank" rel="noopener">Microsoft Copilot</a></li>
+          <li><a href="https://grok.com/" target="_blank" rel="noopener">Grok Imagine</a></li>
+          <li><a href="https://firefly.adobe.com/" target="_blank" rel="noopener">Adobe Firefly</a></li>
+          <li><a href="https://designer.microsoft.com/" target="_blank" rel="noopener">Microsoft Designer</a></li>
+          <li><a href="https://www.canva.com/" target="_blank" rel="noopener">Canva</a></li>
+          <li><a href="https://www.photopea.com/" target="_blank" rel="noopener">Photopea (photo editor)</a></li>
+        </ul>
+        <p class="ai-note">Free tiers have daily limits. Meta AI and Gemini are among the most generous free options. They can't run inside our site, so create there and upload your image here.</p>
         <div class="hero-ctas">
+          <a class="btn btn-secondary" href="#order" data-app-go="shirts">Upload a design on a shirt</a>
           <a class="btn btn-primary" href="#contact" data-preselect="AI Design (Free with purchase)">Get AI Design with your order</a>
           <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNDRAISERS -->
+    <section class="section fund-sec" id="fundraisers" aria-labelledby="fund-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">Give back</p>
+          <h2 id="fund-title" class="cash-title">Fundraiser Assistance For Any Worthy Cause</h2>
+          <p class="section-intro">RCD helps families, schools, teams and communities raise money for any worthy cause — custom fundraiser shirts, signs, raffle wreaths and event decorations, designed with heart.</p>
+        </div>
+        <div class="fund-grid">
+          <figure class="fund-photo" id="nash-photos">
+            <div class="fund-slot"><span aria-hidden="true">✂️💙</span><p>Photos from Nash's fundraiser head-shave coming soon</p></div>
+          </figure>
+          <div class="fund-copy">
+            <h3>Nash's Annihilators · #NashStrong</h3>
+            <p>For Nash's fundraiser, we made the team shirts — <strong>"Nash's Annihilators"</strong> and <strong>"#NashStrong"</strong> — and shaved our head to show support.</p>
+            <p>Planning a benefit, memorial, medical or school fundraiser? Tell us the cause and we'll help design shirts and items that bring people together.</p>
+            <a class="btn btn-primary cash-btn" href="#contact" data-preselect="Fundraiser Assistance (any worthy cause)">💵 Plan a Fundraiser</a>
+          </div>
         </div>
       </div>
     </section>
@@ -654,6 +720,7 @@
               <option value="Personalized Audio — 1 song (from $15)">Personalized Audio — 1 song (from $15)</option>
               <option value="Personalized Audio — 5 songs (from $60)">Personalized Audio — 5 songs (from $60)</option>
               <option value="Personalized Audio — 10 songs (from $100)">Personalized Audio — 10 songs (from $100)</option>
+              <option value="Fundraiser Assistance (any worthy cause)">Fundraiser Assistance (any worthy cause)</option>
               <option value="Other">Other</option>
             </select>
             <p class="field-error" id="service-error" hidden></p>
@@ -683,6 +750,7 @@
       <div>
         <strong>Ritzie Custom Designs</strong>
         <p>Owned by Jen Ritzie · Custom apparel, crafts, parties &amp; more</p>
+        <p class="footer-vet">🇺🇸 Air Force Veteran Owned and Operated</p>
       </div>
       <div>
         <p>Email: <a href="mailto:RCDbyJen@gmail.com">RCDbyJen@gmail.com</a> or <a href="mailto:Jenhayrit4@gmail.com">Jenhayrit4@gmail.com</a></p>
@@ -692,6 +760,7 @@
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#ai-design">AI Design</a>
+        <a href="#fundraisers">Fundraisers</a>
         <a href="#contact">Request a Quote</a>
       </div>
       <div class="footer-qr">

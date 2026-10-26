@@ -375,9 +375,62 @@
   }
   var shirtPath = document.getElementById("rw-shirt-path");
   var shirtLabel = document.getElementById("rw-shirt-label");
+  var shirtExtra = document.getElementById("rw-shirt-extra");
+  var shirtImg = document.getElementById("rw-shirt-img");
+  var gName = document.getElementById("rw-garment-name");
+  var SHAPES = {
+    tee: { d: "M60 30 L85 20 Q100 35 115 20 L140 30 L175 60 L155 85 L140 75 L140 180 L60 180 L60 75 L45 85 L25 60 Z", x: "" },
+    long: { d: "M60 30 L85 20 Q100 35 115 20 L140 30 L168 70 L186 170 L166 176 L142 92 L140 180 L60 180 L58 92 L34 176 L14 170 L32 70 Z", x: "M16 160 L36 166 M184 160 L164 166" },
+    hoodie: { d: "M58 36 Q70 6 100 6 Q130 6 142 36 L168 70 L186 170 L166 176 L142 92 L140 182 L60 182 L58 92 L34 176 L14 170 L32 70 Z", x: "M78 34 Q100 58 122 34 M92 50 L90 84 M108 50 L110 84 M72 140 L128 140 L122 168 L78 168 Z" },
+    tank: { d: "M72 22 L86 22 Q100 52 114 22 L128 22 Q130 62 148 74 L146 182 L54 182 L52 74 Q70 62 72 22 Z", x: "" }
+  };
+  function applyGarment(g) {
+    var key = /Hoodie/.test(g) ? "hoodie" : /Long/.test(g) ? "long" : /Tank/.test(g) ? "tank" : "tee";
+    shirtPath.setAttribute("d", SHAPES[key].d);
+    shirtExtra.setAttribute("d", SHAPES[key].x);
+    shirtLabel.textContent = g === "T-Shirt Back" ? "★ BACK ★" : "RCD ★";
+    shirtImg.setAttribute("y", key === "hoodie" ? "70" : "62");
+    if (gName) gName.textContent = g.replace("T-Shirt Front", "T-Shirt · Front").replace("T-Shirt Back", "T-Shirt · Back");
+  }
   single(".rw-tabs button", function (b) {
     state.garment = b.getAttribute("data-garment");
-    shirtLabel.textContent = state.garment === "T-Shirt Back" ? "★ BACK ★" : state.garment === "Sleeve" ? "★" : "RCD ★";
+    applyGarment(state.garment);
+  });
+  var upIn = document.getElementById("rw-upload-input");
+  var upName = document.getElementById("rw-upload-name");
+  var upClear = document.getElementById("rw-upload-clear");
+  upIn.addEventListener("change", function () {
+    var f = upIn.files && upIn.files[0];
+    if (!f) return;
+    if (!/^image\//.test(f.type)) { upName.textContent = "Please choose an image file."; return; }
+    var rd = new FileReader();
+    rd.onload = function () {
+      state.upload = f.name; state.uploadData = rd.result;
+      shirtImg.setAttribute("href", rd.result); shirtImg.style.display = "";
+      shirtLabel.style.display = "none";
+      upName.textContent = "Your design: " + f.name + " — please also attach it when you email your quote.";
+      upClear.hidden = false;
+    };
+    rd.readAsDataURL(f);
+  });
+  upClear.addEventListener("click", function () {
+    state.upload = ""; state.uploadData = ""; upIn.value = "";
+    shirtImg.setAttribute("href", ""); shirtImg.style.display = "none"; shirtLabel.style.display = "";
+    upName.textContent = "Upload a photo, logo or AI design from your phone — it previews on the shirt.";
+    upClear.hidden = true;
+  });
+  // Hero category icons + outside links open the app like the in-app buttons
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-app-go],[data-app-pick]");
+    if (!t || app.contains(t)) return;
+    e.preventDefault();
+    if (t.getAttribute("data-cat")) state.category = t.getAttribute("data-cat");
+    if (t.hasAttribute("data-app-pick")) { fill(t.getAttribute("data-app-pick"), state.category); return; }
+    show(t.getAttribute("data-app-go"));
+    var sec = document.getElementById("order");
+    if (sec) sec.scrollIntoView({ behavior: "smooth" });
+    var foc = t.getAttribute("data-focus");
+    if (foc) setTimeout(function () { var el = document.getElementById(foc); if (el) el.scrollIntoView({ behavior: "smooth", block: "center" }); }, 500);
   });
   single(".rw-swatches button", function (b) {
     state.color = b.getAttribute("data-color");
@@ -386,9 +439,11 @@
   single('.rw-chips:not(.rw-single) button', function (b) { state.occasion = b.textContent; });
   single(".rw-single button", function (b) { state.song = b.getAttribute("data-pick-opt"); });
   document.getElementById("rw-shirt-go").addEventListener("click", function () {
-    fill("Custom Design T-Shirts (from $15 · 2 for $25)",
+    fill(/Clothing/.test(state.category) ? "Anything on Shirts (from $15)" : "Custom Design T-Shirts (from $15 · 2 for $25)",
       (state.category || "Custom Shirts") + " — " + state.garment + ", color: " + state.color +
-      (state.occasion ? ", for: " + state.occasion : "") + " (AI design free with purchase)");
+      (state.occasion ? ", for: " + state.occasion : "") +
+      (state.upload ? ", my uploaded design: " + state.upload + " (I'll attach it to the email)" : "") +
+      " (AI design free with purchase)");
   });
   document.getElementById("rw-sound-go").addEventListener("click", function () {
     fill(state.song, "AI Soundtrack — " + state.song.replace("Personalized Audio — ", ""));
